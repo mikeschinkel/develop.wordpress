@@ -116,9 +116,6 @@ return array (
   'WP_Network' => 'wp-includes/class-wp-network.php',
   'WP_oEmbed_Controller' => 'wp-includes/class-wp-oembed-controller.php',
   'WP_Post_Type' => 'wp-includes/class-wp-post-type.php',
-  'WP_Post' => 'wp-includes/class-wp-post.php',
-  'WP_Query' => 'wp-includes/class-wp-query.php',
-  'WP_Rewrite' => 'wp-includes/class-wp-rewrite.php',
   'WP_Role' => 'wp-includes/class-wp-role.php',
   'WP_Roles' => 'wp-includes/class-wp-roles.php',
   'WP_Session_Tokens' => 'wp-includes/class-wp-session-tokens.php',
@@ -139,7 +136,6 @@ return array (
   'WP_Widget_Factory' => 'wp-includes/class-wp-widget-factory.php',
   'WP_Widget' => 'wp-includes/class-wp-widget.php',
   'wp_xmlrpc_server' => 'wp-includes/class-wp-xmlrpc-server.php',
-  'WP' => 'wp-includes/class-wp.php',
   'WP_Dependencies' => 'wp-includes/class.wp-dependencies.php',
   'WP_Scripts' => 'wp-includes/class.wp-scripts.php',
   'WP_Styles' => 'wp-includes/class.wp-styles.php',
@@ -339,5 +335,4 @@ return array (
   'WP_Widget_Search' => 'wp-includes/widgets/class-wp-widget-search.php',
   'WP_Widget_Tag_Cloud' => 'wp-includes/widgets/class-wp-widget-tag-cloud.php',
   'WP_Widget_Text' => 'wp-includes/widgets/class-wp-widget-text.php',
-  'wpdb' => 'wp-includes/wp-db.php',
 );
