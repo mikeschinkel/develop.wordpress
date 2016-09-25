@@ -14,7 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'WPINC', 'wp-includes' );
 
-require( ABSPATH . 'wp-vendor/autoload_wordpress.php' );
+/*
+ * Load the WordPress core Autoloader
+ */
+require( ABSPATH . WPINC . '/autoloader.php' );
+
 require( ABSPATH . 'wp-admin/includes/noop.php' );
 require( ABSPATH . WPINC . '/script-loader.php' );
 require( ABSPATH . WPINC . '/version.php' );

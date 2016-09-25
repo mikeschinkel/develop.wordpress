@@ -645,6 +645,10 @@ module.exports = function(grunt) {
 				],
 				tasks: ['qunit']
 			}
+		},
+		classmapgen: {
+			cmd: 'php',
+			args: ['-f', 'wp-classmap-generator.php']
 		}
 	});
 
@@ -800,7 +804,8 @@ module.exports = function(grunt) {
 		'concat:emoji',
 		'includes:emoji',
 		'includes:embed',
-		'jsvalidate:build'
+		'jsvalidate:build',
+		'classmapgen'
 	] );
 
 	grunt.registerTask( 'prerelease', [

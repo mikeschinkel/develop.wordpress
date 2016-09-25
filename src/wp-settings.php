@@ -17,8 +17,10 @@
  */
 define( 'WPINC', 'wp-includes' );
 
-// WordPress Core PHP 5.2-compatible Autoloader
-require_once( ABSPATH . 'wp-vendor/autoload_wordpress.php' );
+/*
+ * Load WordPress Core autoloader
+ */
+require( ABSPATH . WPINC . '/autoloader.php' );
 
 // Include files required for initialization.
 require( ABSPATH . WPINC . '/load.php' );
