@@ -41,6 +41,19 @@ class WP_Classmap_Generator {
 	}
 
 	/**
+	 * @param string[] $class_names
+	 */
+	public function omit_classes( $class_names ) {
+
+		foreach ( $class_names as $class_name ) {
+
+			unset( $this->_classmap[ $class_name ] );
+
+		}
+
+	}
+
+	/**
 	 * @param SplFileInfo $file
 	 * @return string|null
 	 */
@@ -74,24 +87,20 @@ class WP_Classmap_Generator {
 	 */
 	private function _get_file_classnames( $file ) {
 
-		do {
+		$classes = array();
 
-			$classes = array();
+		$php_code = file_get_contents( $file->getRealPath() );
 
-			$php_code = file_get_contents( $file->getRealPath() );
+		/**
+		 * @see http://stackoverflow.com/a/12011255/102699
+		 */
+		$token = '([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)';
 
-			/**
-			 * @see http://stackoverflow.com/a/12011255/102699
-			 */
-			$token = '([a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*)';
-
-			if ( ! preg_match_all( "/\n\s*(final|abstract)?\s*(class|interface|trait)\s+{$token}/", $php_code, $matches ) ) {
-				break;
-			}
+		if ( preg_match_all( "/\n\s*(final|abstract)?\s*(class|interface|trait)\s+{$token}/", $php_code, $matches ) ) {
 
 			$classes = $matches[ 3 ];
 
-		} while ( false );
+		}
 
 		return $classes;
 
