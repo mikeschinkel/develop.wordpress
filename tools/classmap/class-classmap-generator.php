@@ -111,7 +111,7 @@ php
 return {$classmap};
 PHP;
 
-		return $classmap;
+		return "{$classmap}\n";
 
 	}
 
