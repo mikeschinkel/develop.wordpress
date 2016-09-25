@@ -111,9 +111,7 @@ class WP_Classmap_Generator {
 	 */
 	public function get_classmap() {
 
-		ob_start();
-		var_export( $this->_classmap );
-		$classmap = ob_get_clean();
+		$classmap = var_export( $this->_classmap, true );
 		$classmap = '<?' . <<<PHP
 php
 // WordPress Core Classmap
