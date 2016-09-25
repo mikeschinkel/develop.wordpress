@@ -17,17 +17,35 @@ class WP_Autoloader {
 	 */
 	function __construct() {
 
-		if ( ! defined( 'DISABLE_CORE_AUTOLOADER' ) ) {
+		do {
 
-			spl_autoload_register( array( $this, 'load' ), true, true );
+			if ( defined( 'DISABLE_CORE_AUTOLOADER' ) ) {
 
-			if ( is_file( ABSPATH . 'wp-classmap.php' ) ) {
+				break;
 
-				self::$_classmap = require( ABSPATH . 'wp-classmap.php' );
+			} else {
+
+				define( 'DISABLE_CORE_AUTOLOADER', false );
 
 			}
 
-		}
+			if ( DISABLE_CORE_AUTOLOADER ) {
+
+				break;
+
+			}
+
+			spl_autoload_register( array( $this, 'load' ), true, true );
+
+			if ( ! is_file( ABSPATH . 'wp-classmap.php' ) ) {
+
+				break;
+
+			}
+
+			self::$_classmap = require( ABSPATH . 'wp-classmap.php' );
+
+		} while ( false );
 
 	}
 
