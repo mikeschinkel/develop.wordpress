@@ -12,11 +12,7 @@ $generator->add_files( 'wp-includes' );
  * @link https://core.trac.wordpress.org/ticket/36335?replyto=218#comment:218
  */
 $generator->omit_classes( array(
-	// 'WP',
-	// 'WP_Query',
-	// 'WP_Post',
-	// 'WP_Rewrite',
-	// 'wpdb',
+	'WP_Autoloader',
 ));
 
 $classmap = $generator->get_classmap();
