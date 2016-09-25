@@ -8,7 +8,7 @@ $generator->add_files( 'wp-includes' );
 
 /**
  * The following shows how to omit classes that we want to laod manually
- * This is not required by instead added because of these trac comments:
+ * This is not required but instead added because of these comments on trac:
  * @link https://core.trac.wordpress.org/ticket/36335?replyto=218#comment:218
  */
 $generator->omit_classes( array(

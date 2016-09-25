@@ -3,7 +3,7 @@
 /**
  * Class WP_Classmap_Geneator
  *
- * Class to cenerates a classmap by scanning for classes, interfaces and traits.
+ * Class to generate a classmap by scanning core for classes, interfaces and traits.
  *
  */
 class WP_Classmap_Generator {
